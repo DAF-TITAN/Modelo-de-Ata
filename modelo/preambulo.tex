@@ -1,0 +1,80 @@
+%----------------------------------------------------------------------------------------
+%	Preâmbulo - Definições do documento
+%----------------------------------------------------------------------------------------
+\usepackage[width=19.00cm, height=21cm, headheight=0cm]{geometry}
+\usepackage{draftwatermark}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[inline]{enumitem}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{multicol,caption}
+\usepackage{lmodern}
+
+\usepackage[pdftex]{hyperref}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+% Configurações das dimensões do documento
+\setlength{\columnsep}{1cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\headheight}{120pt}
+
+% Comandos personalizados
+\newcommand*{\email}[1]{
+	\href{mailto:#1}{\nolinkurl{#1}}
+} 
+
+\newcommand{\dividerline}{
+	\noindent{\rule{\textwidth}{0,4pt}\vspace{1ex}\centering}
+}
+
+% Ambientes personalizados
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+% Listas personalizadas
+\newlist{enumerateL}{enumerate*}{3}
+\setlist[enumerateL]{label={\alph*)},font={\color{red!50!black}\bfseries}}
+
+\newlist{enumerateA}{enumerate}{3}
+\setlist[enumerateA]{label=\alph*)}
+
+% Estilo de paginação
+\pagestyle{fancy}
+\fancypagestyle{pag1}
+{
+	\lhead{\includegraphics[width=3.5cm]{modelo/logo.png}}
+	\rhead{\emph{Rua Prof. Aristídes Novis, nº 2 \\ Federação, Salvador - BA, CEP: 40.210-630 \\
+			EPUFBA - 8º Andar, sala 8.03.05 \\
+			\textbf{Contato: } \email{contato@titanci.com.br} \\
+		}}
+}
+
+\pagestyle{fancy}
+	
+\fancypagestyle{pag2}
+{
+	\lhead{}
+	\rhead{}
+}
+	
+% Marca d'água
+\SetWatermarkText{\tikz{\node[opacity=1]{\includegraphics{modelo/background.png}};}}
+\SetWatermarkAngle{0}
+\SetWatermarkScale{1}
+\SetWatermarkColor[rgb]{0,1,0}
+\SetWatermarkLightness{1}
+
+% Revisado em 08/03/2020, por Natan Santos.
